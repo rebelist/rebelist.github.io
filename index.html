@@ -389,10 +389,10 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>Engineering Leader</h1>
-                    <p class="hero-subtitle">Innovation • Leadership • Technical Excellence</p>
+                    <p class="hero-subtitle">Innovation • Leadership • Systems Thinking</p>
                     <p class="hero-description">
-                        Passionate engineering manager driving innovation through strategic leadership, 
-                        cutting-edge technology, and building exceptional teams that deliver world-class software solutions.
+                    I bring together technical expertise and leadership to help teams deliver meaningful software. 
+                    I’m fascinated by the intersection of management, engineering, and entrepreneurship, and I use GitHub to experiment with ideas that may grow into future products or ways of working.
                     </p>
                     <div class="cta-buttons">
                         <a href="https://github.com/rebelist" class="btn btn-primary">
@@ -439,8 +439,8 @@
                         </div>
                         <h3 class="feature-title">Innovation Leadership</h3>
                         <p class="feature-description">
-                            Driving technological innovation through strategic vision, fostering a culture of 
-                            experimentation, and implementing cutting-edge solutions that push boundaries.
+                        I drive innovation by combining strategic thinking with a systems perspective, 
+                        encouraging experimentation, and building solutions that make a real impact.
                         </p>
                     </div>
                     <div class="feature-card">
@@ -514,11 +514,14 @@
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p>&copy; 2025 The Rebelist. Engineering the future, one commit at a time.</p>
+            <p>&copy; <span id="year"></span> The Rebelist. Experiment, build, iterate.</p>
         </div>
     </footer>
 
     <script>
+        // Year insertion
+        document.getElementById("year").textContent = new Date().getFullYear();
+        
         // Animated background particles
         function createParticles() {
             const bgAnimation = document.getElementById('bgAnimation');
