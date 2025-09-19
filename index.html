@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Rebelist - Engineering Manager & Innovation Leader</title>
+    <title>Your Name - Engineering Manager & Innovation Leader</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -130,11 +130,13 @@
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #db2c95 0%, #ff6b9d 100%);
+            background: linear-gradient(135deg, #db2c95 0%, #ff6b9d 50%, #ffffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: slideInUp 1s ease-out;
+            filter: drop-shadow(0 4px 12px rgba(219, 44, 149, 0.4)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+            position: relative;
         }
 
         .hero-subtitle {
@@ -378,7 +380,7 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <img src="https://avatars.githubusercontent.com/u/195816070?v=4" alt="The Rebelist" class="logo-image">
+                <img src="https://avatars.githubusercontent.com/u/195816070?v=4" alt="The Rebelist" class="logo-image" onerror="this.style.display='none'">
                 The Rebelist
             </a>
         </nav>
@@ -392,7 +394,7 @@
                     <p class="hero-subtitle">Innovation • Leadership • Systems Thinking</p>
                     <p class="hero-description">
                         I bring together technical expertise and leadership to help teams deliver meaningful software. 
-                        I’m fascinated by the intersection of management, engineering, and entrepreneurship, and I use experimentation and exploration to shape ideas that may grow into future products or new ways of working.
+                        I'm fascinated by the intersection of management, engineering, and entrepreneurship, and I use experimentation and exploration to shape ideas that may grow into future products or new ways of working.
                     </p>
                     <div class="cta-buttons">
                         <a href="https://github.com/rebelist" class="btn btn-primary">
@@ -439,7 +441,7 @@
                         </div>
                         <h3 class="feature-title">Innovation Leadership</h3>
                         <p class="feature-description">
-                        I drive innovation by combining strategic thinking with a systems perspective, 
+                            Driving innovation by combining strategic thinking with a systems perspective, 
                         encouraging experimentation, and building solutions that make a real impact.
                         </p>
                     </div>
@@ -449,8 +451,8 @@
                         </div>
                         <h3 class="feature-title">Team Development</h3>
                         <p class="feature-description">
-                            Building and mentoring high-performance engineering teams, promoting growth mindset, 
-                            and creating environments where exceptional talent thrives.
+                           Building and mentoring high-performance engineering teams, promoting growth mindset, 
+                            and creating environments where exceptional talent succeeds.
                         </p>
                     </div>
                     <div class="feature-card">
@@ -503,24 +505,24 @@
                 <a href="https://github.com/rebelist" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="#" title="LinkedIn">
+                <a href="https://linkedin.com/in/yourprofile" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://medium.com/@rebelist" title="Medium">
                     <i class="fab fa-medium"></i>
                 </a>
-                <a href="#" title="Email">
+                <a href="mailto:your.email@example.com" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p>&copy; <span id="year"></span>The Rebelist. Innovation Over Conformity.</p>
+            <p>&copy; 2025 The Rebelist. The Rebelist. Innovation Over Conformity.</p>
         </div>
     </footer>
 
     <script>
         // Year insertion
         document.getElementById("year").textContent = new Date().getFullYear();
-        
+
         // Animated background particles
         function createParticles() {
             const bgAnimation = document.getElementById('bgAnimation');
