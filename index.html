@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,8 +49,17 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.8;
+            }
         }
 
         /* Header */
@@ -121,9 +131,32 @@
 
         /* Hero Section */
         .hero {
-            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0 5rem;
+            /* space above/below */
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            /* gives some buffer for parallax movement */
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d3748 100%);
+            z-index: -1;
+            will-change: transform;
+        }
+
+        .hero-content {
             text-align: center;
             position: relative;
+            z-index: 1;
+            /* keeps it above .hero-bg */
+            width: 100%;
         }
 
         .hero-content h1 {
@@ -193,7 +226,7 @@
 
         /* Stats Section */
         .stats {
-            padding: 6rem 0;
+            padding: 5rem 0;
             background: rgba(15, 20, 25, 0.5);
         }
 
@@ -315,6 +348,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -326,6 +360,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -337,6 +372,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -348,16 +384,16 @@
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-            
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .nav-links {
                 display: none;
             }
-            
+
             .stats-grid,
             .features-grid {
                 grid-template-columns: 1fr;
@@ -374,27 +410,37 @@
         }
     </style>
 </head>
+
 <body>
     <div class="bg-animation" id="bgAnimation"></div>
 
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <img src="https://avatars.githubusercontent.com/u/195816070?v=4" alt="The Rebelist" class="logo-image" onerror="this.style.display='none'">
+                <img src="https://avatars.githubusercontent.com/u/195816070?v=4" alt="The Rebelist" class="logo-image"
+                    onerror="this.style.display='none'">
                 The Rebelist
             </a>
         </nav>
     </header>
 
     <main>
+
+
         <section class="hero">
+            <div class="hero-bg"></div>
             <div class="container">
                 <div class="hero-content">
                     <h1>Experiment. Build. Iterate.</h1>
                     <p class="hero-subtitle">Innovation • Leadership • Systems Thinking</p>
                     <p class="hero-description">
-                        I bring together technical expertise and leadership to help teams deliver meaningful software. 
-                        I'm fascinated by the intersection of management, engineering, and entrepreneurship, and I use experimentation and exploration to shape ideas that may grow into future products or new ways of working.
+                        I bring together technical expertise and leadership to help teams deliver meaningful
+                        software.
+                        I'm fascinated by the intersection of management, engineering, and entrepreneurship, and I
+                        use
+                        experimentation and exploration to shape ideas that may grow into future products or new
+                        ways of
+                        working.
                     </p>
                     <div class="cta-buttons">
                         <a href="https://github.com/rebelist" class="btn btn-primary">
@@ -407,6 +453,8 @@
                 </div>
             </div>
         </section>
+
+
 
         <section class="stats">
             <div class="container">
@@ -531,12 +579,12 @@
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                
+
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
                 particle.style.animationDelay = Math.random() * 6 + 's';
                 particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                
+
                 bgAnimation.appendChild(particle);
             }
         }
@@ -555,21 +603,59 @@
             });
         });
 
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+
+                        // Extract numeric part & suffix
+                        const original = counter.textContent.trim();
+                        const numberMatch = original.match(/\d+/);
+                        const suffix = original.replace(numberMatch ? numberMatch[0] : '', '');
+
+                        if (!numberMatch) return; // skip if no number found
+
+                        const target = parseInt(numberMatch[0], 10);
+                        const increment = Math.max(1, target / 100);
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                counter.textContent = Math.min(Math.ceil(current), target) + suffix;
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + suffix;
+                            }
+                        };
+
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            });
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
         // Initialize animations
         window.addEventListener('load', () => {
             createParticles();
+            animateCounters();
         });
 
         // Add parallax effect to hero section
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            const speed = scrolled * 0.5;
-            
-            if (parallax) {
-                parallax.style.transform = `translateY(${speed}px)`;
+            const bg = document.querySelector('.hero-bg');
+            if (bg) {
+                bg.style.transform = `translateY(${scrolled * 0.3}px)`; // slower than scroll
             }
         });
     </script>
 </body>
+
 </html>
