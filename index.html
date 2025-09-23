@@ -17,15 +17,59 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z3P6YJ9TS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
     
-      gtag('config', 'G-1Z3P6YJ9TS');
+    <!-- GDPR Consent Management -->
+    <script>
+        // Initialize consent state
+        window.consentGiven = localStorage.getItem('analytics-consent') === 'true';
+        window.consentDeclined = localStorage.getItem('analytics-consent') === 'false';
+        
+        // Only load Google Analytics if consent is given
+        if (window.consentGiven) {
+            loadGoogleAnalytics();
+        }
+        
+        function loadGoogleAnalytics() {
+            // Create and append the Google Analytics script
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1Z3P6YJ9TS';
+            document.head.appendChild(script);
+            
+            // Initialize gtag
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-1Z3P6YJ9TS');
+                window.gtag = gtag;
+            };
+        }
+        
+        function giveConsent() {
+            localStorage.setItem('analytics-consent', 'true');
+            window.consentGiven = true;
+            window.consentDeclined = false;
+            hideConsentBanner();
+            loadGoogleAnalytics();
+        }
+        
+        function declineConsent() {
+            localStorage.setItem('analytics-consent', 'false');
+            window.consentGiven = false;
+            window.consentDeclined = true;
+            hideConsentBanner();
+        }
+        
+        function hideConsentBanner() {
+            const banner = document.getElementById('consent-banner');
+            if (banner) {
+                banner.style.transform = 'translateY(100%)';
+                setTimeout(() => banner.remove(), 300);
+            }
+        }
     </script>
+    
     <style>
         * {
             margin: 0;
@@ -46,6 +90,90 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Consent Banner Styles */
+        .consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 20, 25, 0.78);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(219, 44, 149, 0.2);
+            padding: 1.5rem;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .consent-text {
+            flex: 1;
+            color: #a8b2d1;
+            font-size: 0.95rem;
+        }
+
+        .consent-text a {
+            color: #db2c95;
+            text-decoration: none;
+        }
+
+        .consent-text a:hover {
+            text-decoration: underline;
+        }
+
+        .consent-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .consent-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .consent-btn-accept {
+            background: linear-gradient(135deg, #db2c95 0%, #ff6b9d 100%);
+            color: #ffffff;
+        }
+
+        .consent-btn-decline {
+            background: transparent;
+            color: #8892b0;
+            border: 1px solid #8892b0;
+        }
+
+        .consent-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .consent-btn-accept:hover {
+            box-shadow: 0 5px 15px rgba(219, 44, 149, 0.4);
+        }
+
+        .consent-btn-decline:hover {
+            border-color: #a8b2d1;
+            color: #a8b2d1;
         }
 
         /* Animated background particles */
@@ -69,13 +197,10 @@
         }
 
         @keyframes float {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0px) rotate(0deg);
                 opacity: 0.4;
             }
-
             50% {
                 transform: translateY(-20px) rotate(180deg);
                 opacity: 0.8;
@@ -154,7 +279,6 @@
             position: relative;
             overflow: hidden;
             padding: 4rem 0 5rem;
-            /* space above/below */
             display: flex;
             align-items: center;
         }
@@ -165,7 +289,6 @@
             left: 0;
             width: 100%;
             height: 150%;
-            /* gives some buffer for parallax movement */
             background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d3748 100%);
             z-index: -1;
             will-change: transform;
@@ -175,7 +298,6 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            /* keeps it above .hero-bg */
             width: 100%;
         }
 
@@ -368,7 +490,6 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -380,7 +501,6 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -392,7 +512,6 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -427,12 +546,39 @@
             .logo {
                 font-size: 1.5rem;
             }
+
+            .consent-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .consent-buttons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- GDPR Consent Banner -->
+    <div id="consent-banner" class="consent-banner" style="display: none;">
+        <div class="consent-content">
+            <div class="consent-text">
+                We use Google Analytics to understand how our site is used and improve your experience.
+            </div>
+            <div class="consent-buttons">
+                <button class="consent-btn consent-btn-accept" onclick="giveConsent()">
+                    <i class="fas fa-check"></i> Accept Analytics
+                </button>
+                <button class="consent-btn consent-btn-decline" onclick="declineConsent()">
+                    <i class="fas fa-times"></i> Decline
+                </button>
+            </div>
+        </div>
+    </div>
 
     <header>
         <nav class="container">
@@ -445,8 +591,6 @@
     </header>
 
     <main>
-
-
         <section class="hero">
             <div class="hero-bg"></div>
             <div class="container">
@@ -473,8 +617,6 @@
                 </div>
             </div>
         </section>
-
-
 
         <section class="stats">
             <div class="container">
@@ -591,6 +733,22 @@
         // Year insertion
         document.getElementById("year").textContent = new Date().getFullYear();
 
+        // Show consent banner if no decision has been made
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!window.consentGiven && !window.consentDeclined) {
+                document.getElementById('consent-banner').style.display = 'block';
+            }
+        });
+
+        function showPrivacyInfo() {
+            alert('Privacy Information:\n\n' +
+                  '• We use Google Analytics to understand site usage\n' +
+                  '• No personal data is collected beyond anonymous usage statistics\n' +
+                  '• You can withdraw consent at any time by clearing your browser data\n' +
+                  '• Data is processed by Google according to their privacy policy\n\n' +
+                  'Contact: rebelist.software@icloud.com');
+        }
+
         // Animated background particles
         function createParticles() {
             const bgAnimation = document.getElementById('bgAnimation');
@@ -676,6 +834,7 @@
             }
         });
     </script>
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
