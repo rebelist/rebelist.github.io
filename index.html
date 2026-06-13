@@ -4,17 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Francisco 'The Rebelist' La Madrid — Engineering Manager with 12+ years building backend systems and leading autonomous teams. I write about the leadership most organizations get wrong.">
+    <meta name="description" content="Francisco 'The Rebelist' La Madrid, an Engineering Manager in Munich with 12+ years building backend and AI-driven systems (Python, Pydantic, vector databases, AI agents, PHP, Kafka, Kubernetes, AWS) and leading autonomous teams. I write about the leadership most organizations get wrong.">
+    <meta name="author" content="Francisco Vilgre La Madrid">
+    <meta name="keywords" content="Engineering Manager, AI Engineer, Engineering Leadership, AI Agents, LLM, RAG, Vector Databases, Pydantic, Python, Backend Engineer, Software Architect, Kafka, Kubernetes, AWS, Munich, Team Lead">
+    <meta name="theme-color" content="#f3efe4">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="The Rebelist — Engineering Leadership, Honestly">
+    <meta property="og:site_name" content="The Rebelist">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="The Rebelist · Engineering Leadership, Honestly">
     <meta property="og:description" content="Engineering Manager with 12+ years building backend systems and leading autonomous teams. Writing about leadership, autonomy, and building things worth building.">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/195816070?v=4">
+    <meta property="og:image:alt" content="Francisco 'The Rebelist' La Madrid">
     <meta property="og:url" content="https://rebelist.github.io/">
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Rebelist · Engineering Leadership, Honestly">
+    <meta name="twitter:description" content="Engineering Manager with 12+ years building backend systems and leading autonomous teams. Writing about leadership, autonomy, and building things worth building.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/195816070?v=4">
     <meta name="google-site-verification" content="mDhFvxwz-FxAyzWtrrppjBRqVO4IrdLafTFVR9xoh0Y" />
     <meta name="robots" content="index, follow">
     <meta name="msvalidate.01" content="A7695871F6F6ACBBA99A79B57AC94A4C" />
-    <title>The Rebelist — Francisco La Madrid · Engineering Manager &amp; Writer</title>
+    <title>The Rebelist · Francisco La Madrid, Engineering Manager &amp; Writer</title>
     <link rel="canonical" href="https://rebelist.github.io/">
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
@@ -374,6 +383,47 @@
             max-width: 22ch;
         }
 
+        /* ---------- Stack strip ---------- */
+        .stack {
+            border-bottom: 1px solid var(--hairline-strong);
+        }
+
+        .stack .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 1rem 1.8rem;
+            padding-top: 1.6rem;
+            padding-bottom: 1.6rem;
+        }
+
+        .stack .kicker {
+            flex: none;
+            padding-top: 0.35rem;
+        }
+
+        .stack__list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 0.6rem;
+        }
+
+        .stack__list li {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.02em;
+            padding: 0.32rem 0.72rem;
+            border: 1px solid var(--hairline);
+            color: var(--ink-soft);
+            transition: border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .stack__list li:hover {
+            border-color: var(--accent);
+            color: var(--accent-ink);
+        }
+
         /* ---------- Section scaffolding ---------- */
         section[id] {
             scroll-margin-top: 110px;
@@ -398,6 +448,17 @@
             font-size: clamp(1.7rem, 4vw, 2.6rem);
             letter-spacing: -0.01em;
             line-height: 1.05;
+        }
+
+        .section__head:has(+ .section__deck) {
+            margin-bottom: 1.3rem;
+        }
+
+        .section__deck {
+            margin: 0 0 2.6rem;
+            max-width: 62ch;
+            font-size: 1.05rem;
+            color: var(--ink-soft);
         }
 
         /* ---------- Writing list ---------- */
@@ -822,7 +883,7 @@
             </div>
             <div class="masthead__strip">
                 <span>Engineering Leadership &amp; Product</span>
-                <span>Munich · Est. Buenos Aires</span>
+                <span>Munich, Germany</span>
             </div>
         </div>
     </header>
@@ -831,12 +892,13 @@
         <!-- ============ HERO ============ -->
         <section class="hero">
             <div class="wrap">
-                <span class="kicker hero__index reveal">No. 01 — Manifesto</span>
+                <span class="kicker hero__index reveal">No. 01 · Manifesto</span>
                 <h1 class="reveal">Most engineering orgs are built to control. I build them to <span class="accent">think.</span></h1>
                 <p class="hero__lead reveal">
-                    I'm Francisco — an <strong>engineering manager</strong> with 12+ years building backend
-                    systems and leading autonomous teams. I write about the leadership most organizations
-                    get wrong, and I'm building my way from management toward something of my own.
+                    I'm Francisco, an <strong>engineering manager</strong> in Munich with 12+ years building
+                    backend systems and leading autonomous teams, now building increasingly with AI. I write
+                    about the leadership most organizations get wrong, and I'm building my way from management
+                    toward something of my own.
                 </p>
                 <div class="cta-row reveal">
                     <a href="#writing" class="btn">Read the writing <span class="arrow" aria-hidden="true">→</span></a>
@@ -851,21 +913,45 @@
                 <div class="facts__grid">
                     <div class="fact">
                         <div class="fact__num">12<span class="unit">+</span></div>
-                        <p class="fact__label">Years building production backend systems</p>
-                    </div>
-                    <div class="fact">
-                        <div class="fact__num">5</div>
-                        <p class="fact__label">Engineers I lead, mentor and grow today</p>
-                    </div>
-                    <div class="fact">
-                        <div class="fact__num">2</div>
-                        <p class="fact__label">Consumer brands on one multi-tenant platform</p>
+                        <p class="fact__label">Years shipping production software</p>
                     </div>
                     <div class="fact">
                         <div class="fact__num">4</div>
-                        <p class="fact__label">Open-source projects out in the wild</p>
+                        <p class="fact__label">Roles climbed, from engineer to manager</p>
+                    </div>
+                    <div class="fact">
+                        <div class="fact__num">6</div>
+                        <p class="fact__label">Markets shipped across Europe</p>
+                    </div>
+                    <div class="fact">
+                        <div class="fact__num">3</div>
+                        <p class="fact__label">Companies: Stepstone, Westwing, mydays</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ============ STACK ============ -->
+        <section class="stack" aria-label="Tech stack">
+            <div class="wrap">
+                <span class="kicker">Tools of the trade</span>
+                <ul class="stack__list">
+                    <li>Python</li>
+                    <li>Pydantic</li>
+                    <li>Vector Databases</li>
+                    <li>AI Agents</li>
+                    <li>PHP</li>
+                    <li>Symfony</li>
+                    <li>Laravel</li>
+                    <li>Apache Kafka</li>
+                    <li>RabbitMQ</li>
+                    <li>Kubernetes</li>
+                    <li>Docker</li>
+                    <li>AWS</li>
+                    <li>Elasticsearch</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                </ul>
             </div>
         </section>
 
@@ -905,7 +991,7 @@
                             <span class="entry__body">
                                 <span class="entry__date">Sep 2025 · Organizations</span>
                                 <h3 class="entry__title">How Organizations Manufacture Buy-In</h3>
-                                <p class="entry__hook">What happens when leadership chooses control over autonomy — and how to recognize the pattern before it costs you your best people.</p>
+                                <p class="entry__hook">What happens when leadership chooses control over autonomy, and how to recognize the pattern before it costs you your best people.</p>
                             </span>
                             <span class="entry__go" aria-hidden="true">→</span>
                         </a>
@@ -916,7 +1002,7 @@
                             <span class="entry__body">
                                 <span class="entry__date">Apr 2025 · Reading</span>
                                 <h3 class="entry__title">Books Don't Scale, That's the Point</h3>
-                                <p class="entry__hook">Five books from the past twelve months — and an honest take on why reading them won't make you a better leader on its own.</p>
+                                <p class="entry__hook">Five books from the past twelve months, and an honest take on why reading them won't make you a better leader on its own.</p>
                             </span>
                             <span class="entry__go" aria-hidden="true">→</span>
                         </a>
@@ -932,11 +1018,12 @@
                     <span class="kicker">No. 03</span>
                     <h2>What I Build</h2>
                 </div>
+                <p class="section__deck">Small, personal projects I build on the side, to learn, to scratch an itch, and to keep my hands in the code.</p>
                 <div class="projects">
                     <a class="project" href="https://github.com/rebelist/streamline">
                         <span class="project__meta"><span>Python</span><span>open source</span></span>
                         <span class="project__name">streamline</span>
-                        <span class="project__desc">An open platform for collecting, visualizing and analyzing engineering metrics — so teams improve from data, not gut feeling.</span>
+                        <span class="project__desc">An open platform for collecting, visualizing and analyzing engineering metrics, so teams improve from data, not gut feeling.</span>
                         <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
                     </a>
                     <a class="project" href="https://github.com/rebelist/hack">
@@ -952,7 +1039,7 @@
                         <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
                     </a>
                     <a class="project" href="https://github.com/rebelist/momentum">
-                        <span class="project__meta"><span>Python</span><span>quant</span></span>
+                        <span class="project__meta"><span>Python</span><span>forecasting</span></span>
                         <span class="project__name">momentum</span>
                         <span class="project__desc">Monte Carlo simulations over historical market data to model the range of where a stock might go next.</span>
                         <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
@@ -994,7 +1081,7 @@
                         <span class="principle__no" aria-hidden="true">4</span>
                         <div>
                             <h3>Learning out loud</h3>
-                            <p>I read, experiment, fail and write about it in public — lately with LLMs and Python. Mistakes get cheaper when you share them.</p>
+                            <p>I read, experiment, fail and write about it in public, lately with LLMs and Python. Mistakes get cheaper when you share them.</p>
                         </div>
                     </div>
                 </div>
@@ -1015,8 +1102,8 @@
                 <a href="mailto:&#114;&#101;&#98;&#101;&#108;&#105;&#115;&#116;&#46;&#100;&#101;&#118;&#64;&#105;&#99;&#108;&#111;&#117;&#100;&#46;&#99;&#111;&#109;" title="Email" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
             </div>
             <div class="colophon__row">
-                <p class="colophon__meta">&copy; <span id="year"></span> The Rebelist · Seeking better ways to build software</p>
-                <p class="colophon__meta">Munich, Germany</p>
+                <p class="colophon__meta">&copy; <span id="year">2026</span> The Rebelist · Seeking better ways to build software</p>
+                <p class="colophon__meta">Munich, Germany · Spanish / English / German</p>
             </div>
         </div>
     </footer>
@@ -1072,17 +1159,44 @@
       "image": "https://avatars.githubusercontent.com/u/195816070?v=4",
       "description": "Engineering Manager with 12+ years building backend systems and leading autonomous teams. Writes about engineering leadership, team autonomy, and product-minded engineering.",
       "jobTitle": "Engineering Manager",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Jochen Schweizer mydays Group"
+      },
       "homeLocation": {
         "@type": "Place",
         "name": "Munich, Germany"
       },
+      "knowsLanguage": ["Spanish", "English", "German"],
       "knowsAbout": [
+        "Artificial Intelligence",
+        "AI Agents",
+        "Large Language Models (LLMs)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Vector Databases",
+        "Python",
+        "Pydantic",
         "Engineering Leadership",
         "Team Autonomy",
         "Product-Minded Engineering",
         "Event-Driven Architecture",
         "Domain-Driven Design",
+        "Microservices",
+        "PHP",
+        "Apache Kafka",
+        "Kubernetes",
+        "AWS",
         "Software Engineering"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Instituto de Tecnología ORT"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universidad de Palermo"
+        }
       ],
       "sameAs": [
         "https://github.com/rebelist",
