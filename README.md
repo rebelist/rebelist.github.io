@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/rebelist/rebelist.github.io/releases"><img src="https://img.shields.io/badge/Release-2.0.1-e63946?logo=github&logoColor=white" alt="Release" /></a>
+<a href="https://github.com/rebelist/rebelist.github.io/releases"><img src="https://img.shields.io/badge/Release-2.0.2-e63946?logo=github&logoColor=white" alt="Release" /></a>
 <a href="https://github.com/rebelist/rebelist.github.io/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_ARR-444444.svg?logo=1password&logoColor=white" alt="License: MIT (code) and All Rights Reserved (content)" /></a>
 <a href="https://github.com/rebelist/rebelist.github.io"><img src="https://img.shields.io/badge/Claude AI-444444?logo=anthropic&logoColor=cc6b49" alt="Built with Claude AI" /></a>
 </p>
