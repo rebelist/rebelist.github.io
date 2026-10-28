@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/rebelist/rebelist.github.io/releases"><img src="https://img.shields.io/badge/Release-2.0.2-e63946?logo=github&logoColor=white" alt="Release" /></a>
+<a href="https://github.com/rebelist/rebelist.github.io/releases"><img src="https://img.shields.io/badge/Release-2.1.0-e63946?logo=github&logoColor=white" alt="Release" /></a>
 <a href="https://github.com/rebelist/rebelist.github.io/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT_%26_ARR-444444.svg?logo=1password&logoColor=white" alt="License: MIT (code) and All Rights Reserved (content)" /></a>
 <a href="https://github.com/rebelist/rebelist.github.io"><img src="https://img.shields.io/badge/Claude AI-444444?logo=anthropic&logoColor=cc6b49" alt="Built with Claude AI" /></a>
 </p>
@@ -27,8 +27,8 @@ It is deployed straight from this repository via GitHub Pages.
 ## Built with
 
 * Hand-written **HTML, CSS, and vanilla JavaScript** (all inline in `index.html`)
-* Typography: **Fraunces** (display), **Archivo** (body), **Space Mono** (labels) — via Google Fonts
-* **Font Awesome** for social icons (CDN, integrity-pinned)
+* Typography: **Fraunces** (display), **Archivo** (body), **Space Mono** (labels), self-hosted in `fonts/` under the SIL Open Font License
+* **Font Awesome Free** icons for the social links, inlined as SVG (CC BY 4.0), no CDN
 * **Google Analytics**, loaded only after explicit GDPR consent
 * **Schema.org** `Person` structured data for SEO
 

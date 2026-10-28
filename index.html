@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Francisco Vilgre La Madrid, 'The Rebelist', an Engineering Manager in Munich with 12+ years building backend and AI-driven systems (Python, Pydantic, vector databases, AI agents, PHP, Kafka, Kubernetes, AWS) and leading autonomous teams. I write about the leadership most organizations get wrong.">
+    <meta name="description" content="The Rebelist: an engineering manager in Munich, building backend systems since 2012. Self-managed product teams, delivery processes built for AI, and articles on the leadership most organisations get wrong.">
     <meta name="author" content="Francisco Vilgre La Madrid">
-    <meta name="keywords" content="Engineering Manager, AI Engineer, Engineering Leadership, People Management, Engineering Hiring, Agile Delivery, Engineering Metrics, AI Agents, LLM, RAG, Vector Databases, Pydantic, Python, Backend Engineer, Software Architect, Event-Driven Architecture, Domain-Driven Design, CI/CD, Observability, Kafka, Kubernetes, AWS, Munich, Team Lead">
+    <meta name="keywords" content="Engineering Manager, Engineering Leadership, Product Engineering, Self-Managed Teams, Engineering Metrics, LLM Applications, AI Agents, Python, FastAPI, Event-Driven Architecture, Domain-Driven Design, Kafka, Kubernetes, AWS, Munich">
     <meta name="theme-color" content="#f3efe4">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Rebelist">
     <meta property="og:locale" content="en_US">
     <meta property="og:title" content="The Rebelist · Engineering Leadership, Honestly">
-    <meta property="og:description" content="Engineering Manager with 12+ years building backend systems and leading autonomous teams. Writing about leadership, autonomy, and building things worth building.">
+    <meta property="og:description" content="Engineering manager in Munich, building backend systems since 2012. On self-managed teams, what AI changes for engineers, and the leadership most organisations get wrong.">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/195816070?v=4">
     <meta property="og:image:alt" content="Francisco 'The Rebelist' La Madrid">
     <meta property="og:url" content="https://rebelist.github.io/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="The Rebelist · Engineering Leadership, Honestly">
-    <meta name="twitter:description" content="Engineering Manager with 12+ years building backend systems and leading autonomous teams. Writing about leadership, autonomy, and building things worth building.">
+    <meta name="twitter:description" content="Engineering manager in Munich, building backend systems since 2012. On self-managed teams, what AI changes for engineers, and the leadership most organisations get wrong.">
     <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/195816070?v=4">
     <meta name="google-site-verification" content="mDhFvxwz-FxAyzWtrrppjBRqVO4IrdLafTFVR9xoh0Y" />
     <meta name="robots" content="index, follow">
@@ -31,12 +31,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&amp;family=Archivo:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+    <!-- Typography: self-hosted (fonts/), no requests to Google -->
+    <link rel="preload" href="fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- GDPR Consent Management -->
     <script>
@@ -89,6 +87,97 @@
     </script>
 
     <style>
+        /* ---------- Fonts (self-hosted, SIL Open Font License, see fonts/OFL-*.txt) ---------- */
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url('fonts/fraunces-latin-ext-standard-normal.woff2') format('woff2');
+            unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: italic;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url('fonts/fraunces-latin-ext-standard-italic.woff2') format('woff2');
+            unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Archivo';
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url('fonts/archivo-latin-ext-wght-normal.woff2') format('woff2');
+            unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Space Mono';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('fonts/space-mono-latin-ext-400-normal.woff2') format('woff2');
+            unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Space Mono';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('fonts/space-mono-latin-ext-700-normal.woff2') format('woff2');
+            unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url('fonts/fraunces-latin-standard-normal.woff2') format('woff2');
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: italic;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url('fonts/fraunces-latin-standard-italic.woff2') format('woff2');
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Archivo';
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url('fonts/archivo-latin-wght-normal.woff2') format('woff2');
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Space Mono';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('fonts/space-mono-latin-400-normal.woff2') format('woff2');
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Space Mono';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('fonts/space-mono-latin-700-normal.woff2') format('woff2');
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+        }
+
         :root {
             --paper: #f3efe4;
             --paper-deep: #ece6d6;
@@ -343,62 +432,134 @@
             color: var(--paper);
         }
 
-        /* ---------- Datapoints ---------- */
-        .facts {
+        /* ---------- Track record ---------- */
+        .record {
             border-top: 1px solid var(--hairline-strong);
             border-bottom: 1px solid var(--hairline-strong);
         }
 
-        .facts__grid {
+        .record__grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            list-style: none;
         }
 
-        .fact {
-            padding: 2.2rem 1.6rem;
+        .stint {
+            padding: 2rem 1.6rem 2.1rem;
             border-left: 1px solid var(--hairline);
         }
 
-        .fact:first-child {
+        .stint:first-child {
             border-left: 0;
             padding-left: 0;
         }
 
-        .fact__num {
+        .stint__years {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+        }
+
+        .stint__years .now {
+            color: var(--accent-ink);
+        }
+
+        .stint__org {
             font-family: var(--display);
-            font-weight: 900;
-            font-size: clamp(2.6rem, 5vw, 3.8rem);
-            line-height: 1;
-            letter-spacing: -0.02em;
+            font-weight: 600;
+            font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+            line-height: 1.1;
+            margin: 0.5rem 0 0.25rem;
         }
 
-        .fact__num .unit {
-            color: var(--accent);
+        .stint__role {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--ink);
         }
 
-        .fact__label {
-            margin-top: 0.7rem;
+        .stint__what {
+            margin-top: 0.45rem;
             font-size: 0.92rem;
             color: var(--ink-soft);
-            max-width: 22ch;
+            max-width: 34ch;
         }
 
-        /* ---------- Stack strip ---------- */
-        .stack {
-            border-bottom: 1px solid var(--hairline-strong);
+        /* ---------- What matters now ---------- */
+        .shifts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid var(--hairline);
+            border-left: 1px solid var(--hairline);
+            list-style: none;
         }
 
-        .stack .wrap {
+        .shift {
             display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 1rem 1.8rem;
+            flex-direction: column;
+            gap: 0.6rem;
+            padding: 1.9rem 1.9rem 1.7rem;
+            border-right: 1px solid var(--hairline);
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .shift h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 1.4rem;
+            line-height: 1.15;
+        }
+
+        .shift p {
+            color: var(--ink-soft);
+            font-size: 0.97rem;
+            flex: 1;
+        }
+
+        .shift__proof {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+        }
+
+        .shift__proof a {
+            color: var(--ink);
+            border-bottom: 1px solid var(--hairline-strong);
+            transition: color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .shift__proof a:hover {
+            color: var(--accent-ink);
+            border-color: var(--accent);
+        }
+
+        .faded {
+            margin-top: 2.6rem;
+            display: grid;
+            grid-template-columns: 11rem 1fr;
+            gap: 0.6rem 2rem;
             padding-top: 1.6rem;
-            padding-bottom: 1.6rem;
+            border-top: 1px solid var(--hairline);
+        }
+
+        .faded p {
+            color: var(--ink-soft);
+            max-width: 68ch;
+        }
+
+        .stack {
+            margin-top: 1.6rem;
+            display: grid;
+            grid-template-columns: 11rem 1fr;
+            gap: 1.1rem 2rem;
+            align-items: baseline;
         }
 
         .stack .kicker {
-            flex: none;
             padding-top: 0.35rem;
         }
 
@@ -417,6 +578,11 @@
             border: 1px solid var(--hairline);
             color: var(--ink-soft);
             transition: border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .stack__list--now li {
+            border-color: var(--hairline-strong);
+            color: var(--ink);
         }
 
         .stack__list li:hover {
@@ -461,6 +627,13 @@
             color: var(--ink-soft);
         }
 
+        /* Align intro text with the left column of the grids below */
+        @media (min-width: 861px) {
+            .section__deck {
+                max-width: min(62ch, 48%);
+            }
+        }
+
         /* ---------- Writing list ---------- */
         .entries {
             list-style: none;
@@ -469,7 +642,7 @@
         .entry {
             position: relative;
             display: grid;
-            grid-template-columns: 3.5rem 1fr auto;
+            grid-template-columns: 1fr auto;
             gap: 1.4rem;
             align-items: baseline;
             padding: 1.8rem 0.4rem;
@@ -477,22 +650,29 @@
             transition: padding 0.3s ease, background 0.3s ease;
         }
 
-        .entry:last-child {
-            border-bottom: 1px solid var(--hairline);
-        }
-
-        .entry__no {
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            color: var(--ink-faint);
+        .section__head + .entries li:first-child .entry {
+            border-top: 0;
             padding-top: 0.4rem;
         }
 
-        .entry__body {
-            grid-column: 2;
+        .entries li:last-child .entry {
+            border-bottom: 1px solid var(--hairline);
         }
 
-        .entry__date {
+        .entry__body {
+            grid-column: 1;
+        }
+
+        .entry--lead .entry__title {
+            font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+            max-width: 30ch;
+        }
+
+        .entry--lead .entry__hook {
+            font-size: 1.08rem;
+        }
+
+        .entry__meta {
             font-family: var(--mono);
             font-size: 0.7rem;
             letter-spacing: 0.16em;
@@ -515,7 +695,7 @@
         }
 
         .entry__go {
-            grid-column: 3;
+            grid-column: 2;
             align-self: center;
             font-size: 1.3rem;
             color: var(--ink-faint);
@@ -537,10 +717,35 @@
             transform: translateX(6px);
         }
 
+        .more-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.6rem;
+            font-family: var(--mono);
+            font-size: 0.74rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            transition: color 0.25s ease;
+        }
+
+        .more-link .arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .more-link:hover {
+            color: var(--accent-ink);
+        }
+
+        .more-link:hover .arrow {
+            transform: translateX(5px);
+        }
+
         /* ---------- Projects ---------- */
         .projects {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             border-top: 1px solid var(--hairline);
             border-left: 1px solid var(--hairline);
         }
@@ -557,6 +762,8 @@
 
         .project__meta {
             display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 1rem;
             justify-content: space-between;
             align-items: center;
             font-family: var(--mono);
@@ -608,6 +815,70 @@
 
         .project:hover .project__go .arrow {
             transform: translateX(5px);
+        }
+
+        .project--feature {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 1.4rem 3rem;
+            padding: 2.4rem 1.9rem 2.2rem;
+            background: var(--paper-deep);
+        }
+
+        .project--feature:hover {
+            background: var(--paper-deep);
+        }
+
+        .project--feature .project__meta {
+            grid-column: 1 / -1;
+        }
+
+        .project--feature .project__name {
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
+            font-weight: 900;
+        }
+
+        .project--feature .project__desc {
+            margin-top: 0.7rem;
+            font-size: 1.02rem;
+        }
+
+        .project__status {
+            color: var(--accent-ink);
+        }
+
+        .project__points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            font-size: 0.95rem;
+            color: var(--ink-soft);
+        }
+
+        .project__points li {
+            padding-left: 1.1rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        .project__points strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .project__tagline {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+            line-height: 1.3;
+            color: var(--accent-ink);
+            margin-top: 0.4rem;
+        }
+
+        .project--feature .kicker {
+            display: block;
+            margin-bottom: 1rem;
         }
 
         /* ---------- Principles ---------- */
@@ -671,6 +942,48 @@
             font-style: italic;
         }
 
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.4rem;
+            align-items: center;
+            margin-bottom: 2.6rem;
+        }
+
+        .btn--light {
+            background: var(--paper);
+            border-color: var(--paper);
+            color: var(--ink);
+        }
+
+        .colophon .btn--light {
+            color: var(--ink);
+        }
+
+        .btn--light:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .colophon .btn--light:hover {
+            color: #fff;
+        }
+
+        .btn--outline-light {
+            background: transparent;
+            border-color: rgba(243, 239, 228, 0.6);
+        }
+
+        .btn--outline-light:hover {
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .colophon .btn--outline-light:hover {
+            color: var(--ink);
+        }
+
         .colophon__row {
             display: flex;
             flex-wrap: wrap;
@@ -685,6 +998,17 @@
             display: flex;
             gap: 1.4rem;
             font-size: 1.3rem;
+        }
+
+        .social {
+            margin-bottom: 2rem;
+        }
+
+        .social .icon {
+            display: block;
+            height: 1em;
+            width: auto;
+            fill: currentColor;
         }
 
         .social a {
@@ -711,40 +1035,40 @@
             position: fixed;
             bottom: 1rem;
             left: 1rem;
-            right: 1rem;
-            max-width: 720px;
-            margin: 0 auto;
+            width: min(340px, calc(100vw - 2rem));
             background: var(--ink);
             color: var(--paper);
-            border: 1px solid var(--accent);
-            padding: 1.3rem 1.5rem;
+            border-left: 3px solid var(--accent);
+            padding: 0.9rem 1rem;
             z-index: 1000;
             transform: translateY(0);
             transition: transform 0.35s ease;
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem 1.4rem;
+            gap: 0.7rem 1rem;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 6px 24px rgba(22, 20, 15, 0.18);
         }
 
         .consent-text {
-            flex: 1 1 280px;
-            font-size: 0.92rem;
+            flex: 1 1 100%;
+            font-size: 0.82rem;
+            line-height: 1.45;
             color: rgba(243, 239, 228, 0.82);
         }
 
         .consent-buttons {
             display: flex;
-            gap: 0.7rem;
+            gap: 0.6rem;
         }
 
         .consent-btn {
             font-family: var(--mono);
-            font-size: 0.72rem;
+            font-size: 0.66rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            padding: 0.6rem 1.1rem;
+            padding: 0.45rem 0.85rem;
             border: 1px solid var(--paper);
             background: transparent;
             color: var(--paper);
@@ -783,31 +1107,35 @@
 
         /* ---------- Responsive ---------- */
         @media (max-width: 860px) {
-            .facts__grid {
-                grid-template-columns: repeat(2, 1fr);
+            .record__grid {
+                grid-template-columns: 1fr;
             }
 
-            .fact {
+            .stint {
+                border-left: 0;
+                padding: 1.5rem 0;
                 border-top: 1px solid var(--hairline);
             }
 
-            .fact:first-child {
-                padding-left: 1.6rem;
-                border-left: 1px solid var(--hairline);
-            }
-
-            .fact:nth-child(-n+2) {
+            .stint:first-child {
                 border-top: 0;
             }
 
-            .fact:nth-child(odd) {
-                border-left: 0;
-                padding-left: 0;
+            .stint__what {
+                max-width: 60ch;
             }
 
             .projects,
-            .principles {
+            .principles,
+            .shifts,
+            .project--feature {
                 grid-template-columns: 1fr;
+            }
+
+            .faded,
+            .stack {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
             }
         }
 
@@ -825,10 +1153,6 @@
                 gap: 0.5rem;
             }
 
-            .entry__no {
-                padding-top: 0;
-            }
-
             .entry__body,
             .entry__go {
                 grid-column: 1;
@@ -836,6 +1160,12 @@
 
             .entry__go {
                 justify-self: start;
+            }
+
+            .shift,
+            .project {
+                padding-left: 1.3rem;
+                padding-right: 1.3rem;
             }
 
             .entry:hover {
@@ -874,6 +1204,7 @@
                 </a>
                 <nav aria-label="Primary">
                     <ul class="navlinks">
+                        <li><a href="#now">Now</a></li>
                         <li><a href="#writing">Writing</a></li>
                         <li><a href="#code">Code</a></li>
                         <li><a href="#principles">Principles</a></li>
@@ -893,67 +1224,99 @@
         <section class="hero">
             <div class="wrap">
                 <span class="kicker hero__index reveal">No. 01 · Manifesto</span>
-                <h1 class="reveal">Most teams are built to follow. <br>I build them to <span class="accent">think.</span></h1>
+                <h1 class="reveal">Engineers own the problem. I remove what makes them <span class="accent">wait.</span></h1>
                 <p class="hero__lead reveal">
-                    Not think as in debate, think as in decide, own the outcome, and ship without waiting for permission. I build engineering teams where the people closest to the work hold the call and carry the result.
-                    <br>12+ years, backend and leadership, based in Munich.</p>
+                    I'm an engineering manager in Munich, building backend systems since 2012. My teams get the context, a clear owner for each area and a direct line to the customer. I spend my time on what slows them down: approval chains, slow reviews, manual testing, missing information. Now that AI writes much of the code, <strong>that is where the time goes.</strong></p>
                 <div class="cta-row reveal">
-                    <a href="#writing" class="btn">Read the writing <span class="arrow" aria-hidden="true">→</span></a>
-                    <a href="#code" class="btn btn--ghost">See the code <span class="arrow" aria-hidden="true">→</span></a>
+                    <a href="#now" class="btn">Where I spend my time <span class="arrow" aria-hidden="true">→</span></a>
+                    <a href="#writing" class="btn btn--ghost">Read the writing <span class="arrow" aria-hidden="true">→</span></a>
                 </div>
             </div>
         </section>
 
-        <!-- ============ DATAPOINTS ============ -->
-        <section class="facts" aria-label="At a glance">
+        <!-- ============ TRACK RECORD ============ -->
+        <section class="record" aria-label="Track record">
             <div class="wrap">
-                <div class="facts__grid">
-                    <div class="fact">
-                        <div class="fact__num">12<span class="unit">+</span></div>
-                        <p class="fact__label">Years shipping production software</p>
-                    </div>
-                    <div class="fact">
-                        <div class="fact__num">4</div>
-                        <p class="fact__label">Roles climbed, from engineer to manager</p>
-                    </div>
-                    <div class="fact">
-                        <div class="fact__num">6</div>
-                        <p class="fact__label">Markets shipped across Europe</p>
-                    </div>
-                    <div class="fact">
-                        <div class="fact__num">3</div>
-                        <p class="fact__label">Companies: Stepstone, Westwing, Jochen Schweizer mydays</p>
-                    </div>
-                </div>
+                <ol class="record__grid">
+                    <li class="stint">
+                        <span class="stint__years">2020–<span class="now">now</span> · Munich</span>
+                        <p class="stint__org">Jochen Schweizer mydays</p>
+                        <p class="stint__role">Engineering Manager</p>
+                        <p class="stint__what">I lead the team behind search, filtering and listings on jochen-schweizer.de and mydays.de, used by 1.1M+ people a month. Before that, solutions architect and senior engineer: I co-designed the event-driven platform they run on. Two engineers on my team have grown into senior roles.</p>
+                    </li>
+                    <li class="stint">
+                        <span class="stint__years">2015–2020 · Munich</span>
+                        <p class="stint__org">Westwing</p>
+                        <p class="stint__role">Senior Software Engineer</p>
+                        <p class="stint__what">Backend for westwing.de, and the customer management and product information systems behind it.</p>
+                    </li>
+                    <li class="stint">
+                        <span class="stint__years">2012–2015 · Warsaw</span>
+                        <p class="stint__org">Stepstone</p>
+                        <p class="stint__role">Software Engineer</p>
+                        <p class="stint__what">Backend for the job board across six country sites, from Germany to South Africa.</p>
+                    </li>
+                </ol>
             </div>
         </section>
 
-        <!-- ============ STACK ============ -->
-        <section class="stack" aria-label="Tech stack">
+        <!-- ============ WHAT MATTERS NOW ============ -->
+        <section id="now" class="section">
             <div class="wrap">
-                <span class="kicker">Tools of the trade</span>
-                <ul class="stack__list">
-                    <li>Python</li>
-                    <li>Pydantic</li>
-                    <li>Vector Databases</li>
-                    <li>AI Agents</li>
-                    <li>LLMs</li>
-                    <li>RAG</li>
-                    <li>PHP</li>
-                    <li>Symfony</li>
-                    <li>Microservices</li>
-                    <li>Apache Kafka</li>
-                    <li>RabbitMQ</li>
-                    <li>Kubernetes</li>
-                    <li>Docker</li>
-                    <li>AWS</li>
-                    <li>CI/CD</li>
-                    <li>Observability</li>
-                    <li>Elasticsearch</li>
-                    <li>PostgreSQL</li>
-                    <li>Redis</li>
-                    <li>MongoDB</li>
+                <div class="section__head">
+                    <span class="kicker">No. 02</span>
+                    <h2>What Matters Now</h2>
+                </div>
+                <p class="section__deck">AI made coding fast. Tickets still wait in review, testing and sign-off. I work on everything around the model: the process and the tooling. If a step doesn't need a human decision, I want it automated. Engineers' attention is the expensive&nbsp;part.</p>
+                <ul class="shifts">
+                    <li class="shift">
+                        <h3>A delivery process built for AI</h3>
+                        <p>The harness around the model is as important as the model itself: checks in the pipeline, automated tests, review effort that matches the risk, and people accountable for what ships. The goal is faster delivery without more broken releases. It is never finished. Models and tools change every few months, and the harness has to change with them.</p>
+                        <span class="shift__proof">Measured with <a href="#streamline">streamline</a></span>
+                    </li>
+                    <li class="shift">
+                        <h3>A toolkit the whole team improves</h3>
+                        <p>When every engineer writes their own prompts and commands, each one repeats the same work. A shared kit holds the team's standards, a map of which service owns what, and skills for review, testing and documentation. It changes through merge requests like any other code. One person's fix becomes everyone's.</p>
+                        <span class="shift__proof">Cursor rules · skills · agents · MCP</span>
+                    </li>
+                    <li class="shift">
+                        <h3>Choosing what to build</h3>
+                        <p>When a prototype takes an afternoon, the scarce skill is knowing which one deserves a second day. I pull engineers into discovery and customer data from the start, so "is this the right problem?" gets asked before the first commit.</p>
+                        <span class="shift__proof">Tried with my own team: <a href="https://rebelist.medium.com/why-engineers-must-start-thinking-like-founders-aa366dddc2bc">the Product Engineer model</a></span>
+                    </li>
+                    <li class="shift">
+                        <h3>AI that says when it doesn't know</h3>
+                        <p>Most AI products always produce an answer, because output feels like value. In Vinn, the engine is built to stop and say what is missing when it doesn't have enough context. Checking and limiting what a model is allowed to claim is a big part of the engineering now.</p>
+                        <span class="shift__proof"><a href="#vinn">Vinn</a> · <a href="#revelations">revelations</a></span>
+                    </li>
                 </ul>
+                <div class="faded">
+                    <span class="kicker">Matters less now</span>
+                    <p>Knowing a framework's API by heart. I spent more than a decade in PHP with Symfony and Laravel, and it still helps me read an unfamiliar codebase fast. It is no longer the thing I would hire myself for.</p>
+                </div>
+                <div class="stack">
+                    <span class="kicker">Building with now</span>
+                    <ul class="stack__list stack__list--now">
+                        <li>Python</li>
+                        <li>FastAPI</li>
+                        <li>Pydantic AI</li>
+                        <li>LLM agents</li>
+                        <li>RAG</li>
+                        <li>PostgreSQL</li>
+                        <li>AI coding agents</li>
+                    </ul>
+                    <span class="kicker">Run in production</span>
+                    <ul class="stack__list">
+                        <li>PHP</li>
+                        <li>Node.js</li>
+                        <li>Apache Kafka</li>
+                        <li>Kubernetes</li>
+                        <li>AWS</li>
+                        <li>Elasticsearch</li>
+                        <li>RabbitMQ</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -961,55 +1324,52 @@
         <section id="writing" class="section">
             <div class="wrap">
                 <div class="section__head">
-                    <span class="kicker">No. 02</span>
+                    <span class="kicker">No. 03</span>
                     <h2>Selected Writing</h2>
                 </div>
                 <ul class="entries">
                     <li>
-                        <a class="entry" href="https://rebelist.medium.com/why-engineers-must-start-thinking-like-founders-aa366dddc2bc">
-                            <span class="entry__no">01</span>
+                        <a class="entry entry--lead" href="https://rebelist.medium.com/why-engineers-must-start-thinking-like-founders-aa366dddc2bc">
                             <div class="entry__body">
-                                <span class="entry__date">Aug 2025 · Engineering Culture</span>
+                                <span class="entry__meta">Engineering culture · 13 min read</span>
                                 <h3 class="entry__title">Why Engineers Must Start Thinking Like Founders</h3>
-                                <p class="entry__hook">Autonomous, self-managed teams with a product-first mindset are the ones that win in today's AI-driven world.</p>
+                                <p class="entry__hook">Most software teams are still organised like it's 2010. A model for small, self-managed teams of Product Engineers who own the problem as well as the code, why AI makes it urgent, and what happened when I tried it with my own team.</p>
                             </div>
                             <span class="entry__go" aria-hidden="true">→</span>
                         </a>
                     </li>
                     <li>
                         <a class="entry" href="https://rebelist.medium.com/remote-office-the-wrong-conversation-d04abb0c5e80">
-                            <span class="entry__no">02</span>
                             <div class="entry__body">
-                                <span class="entry__date">September 2026 · Leadership</span>
+                                <span class="entry__meta">Leadership · 11 min read</span>
                                 <h3 class="entry__title">Remote? Office? The Wrong Conversation.</h3>
-                                <p class="entry__hook">Forced office days reveal how leaders see people.</p>
+                                <p class="entry__hook">If commute time counted as paid work, the return-to-office debate would reverse within a quarter. The arguments follow the bill. On motivation, control, and what forced office days are hiding.</p>
                             </div>
                             <span class="entry__go" aria-hidden="true">→</span>
                         </a>
                     </li>
                     <li>
-                        <a class="entry" href="https://medium.com/@rebelist/everyone-knows-you-didnt-write-that-59de2c22f60a">
-                            <span class="entry__no">03</span>
+                        <a class="entry" href="https://rebelist.medium.com/everyone-knows-you-didnt-write-that-59de2c22f60a">
                             <div class="entry__body">
-                                <span class="entry__date">Jul 2026 · Communication</span>
+                                <span class="entry__meta">Communication · 5 min read</span>
                                 <h3 class="entry__title">Everyone Knows You Didn’t Write That</h3>
-                                <p class="entry__hook">How AI-polished messages quietly break trust, and when using AI is still the right call.</p>
+                                <p class="entry__hook">When leaders run their messages through AI, people stop trusting what they read. Where I draw the line, writing in my second language.</p>
                             </div>
                             <span class="entry__go" aria-hidden="true">→</span>
                         </a>
                     </li>
                     <li>
                         <a class="entry" href="https://rebelist.medium.com/leadership-vs-management-why-organizations-need-both-6ed68e4574b8">
-                            <span class="entry__no">04</span>
                             <div class="entry__body">
-                                <span class="entry__date">Aug 2025 · Leadership</span>
+                                <span class="entry__meta">Leadership · 5 min read</span>
                                 <h3 class="entry__title">Why 82% of Your Leaders Shouldn't Be Leading</h3>
-                                <p class="entry__hook">Mistaking management for leadership creates motion without meaning. Get both roles right and vision turns into systems that actually deliver.</p>
+                                <p class="entry__hook">Organisations promote their best engineers into management, then judge them on vision. Why leadership and management need separate tracks, valued equally.</p>
                             </div>
                             <span class="entry__go" aria-hidden="true">→</span>
                         </a>
                     </li>
                 </ul>
+                <a class="more-link" href="https://rebelist.medium.com/">All articles on Medium <span class="arrow" aria-hidden="true">→</span></a>
             </div>
         </section>
 
@@ -1017,33 +1377,43 @@
         <section id="code" class="section">
             <div class="wrap">
                 <div class="section__head">
-                    <span class="kicker">No. 03</span>
+                    <span class="kicker">No. 04</span>
                     <h2>What I Build</h2>
                 </div>
-                <p class="section__deck">Small, personal projects I build on the side, to learn, to scratch an itch, and to keep my hands in the code.</p>
+                <p class="section__deck">Things I build outside my job. After more than a decade of PHP, most of it is Python now, and most of it has a language model somewhere inside.</p>
                 <div class="projects">
-                    <a class="project" href="https://github.com/rebelist/streamline">
-                        <span class="project__meta"><span>Python</span><span>engineering metrics</span></span>
+                    <article class="project project--feature" id="vinn">
+                        <span class="project__meta"><span>Personal strategy · AI</span><span class="project__status">Early development · private</span></span>
+                        <div>
+                            <span class="project__name">Vinn</span>
+                            <p class="project__tagline">A plan for when the decision is someone else's.</p>
+                            <p class="project__desc">A promotion, a budget approval, a deal with a landlord: outcomes you can influence but can't decide alone. You describe what you want and who has a say. Vinn lays out the steps, how you will know each one worked, and how each one could fail. When something new happens, it updates the plan.</p>
+                        </div>
+                        <div>
+                            <span class="kicker">Why not just ask a chatbot?</span>
+                            <ul class="project__points">
+                                <li><strong>It remembers the people.</strong> What you learn about your manager or a landlord carries over to the next time you deal with them.</li>
+                                <li><strong>It says when it doesn't know enough.</strong> It tells you what to find out first, and it won't make up a plan.</li>
+                                <li><strong>The whole plan fits on one board.</strong> You can read it at a glance, without scrolling back through a long chat.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <a class="project" id="streamline" href="https://github.com/rebelist/streamline">
+                        <span class="project__meta"><span>Engineering metrics</span><span>Open source</span></span>
                         <span class="project__name">streamline</span>
-                        <span class="project__desc">An open platform for collecting, visualizing and analyzing engineering metrics, so teams improve from data, not gut feeling.</span>
+                        <span class="project__desc">Pulls delivery data from Jira and turns it into cycle time, lead time and throughput dashboards in Grafana, so a team can see where work waits.</span>
+                        <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
+                    </a>
+                    <a class="project" id="revelations" href="https://github.com/rebelist/revelations">
+                        <span class="project__meta"><span>LLM · RAG</span><span>Learning prototype</span></span>
+                        <span class="project__name">revelations</span>
+                        <span class="project__desc">A retrieval-augmented generation prototype that indexes Confluence spaces, so answers to internal questions are one query away.</span>
                         <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
                     </a>
                     <a class="project" href="https://github.com/rebelist/hack">
-                        <span class="project__meta"><span>Python</span><span>CLI tooling</span></span>
+                        <span class="project__meta"><span>Team tooling</span><span>CLI</span></span>
                         <span class="project__name">hack</span>
-                        <span class="project__desc">A command-line tool that automates the boring, repetitive work and standardizes how a team ships.</span>
-                        <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
-                    </a>
-                    <a class="project" href="https://github.com/rebelist/revelations">
-                        <span class="project__meta"><span>Python</span><span>LLM · RAG</span></span>
-                        <span class="project__name">revelations</span>
-                        <span class="project__desc">A Retrieval-Augmented Generation prototype that indexes Confluence spaces so answers are one query away.</span>
-                        <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
-                    </a>
-                    <a class="project" href="https://github.com/rebelist/momentum">
-                        <span class="project__meta"><span>Python</span><span>forecasting</span></span>
-                        <span class="project__name">momentum</span>
-                        <span class="project__desc">Monte Carlo simulations over historical market data to model the range of where a stock might go next.</span>
+                        <span class="project__desc">A command-line tool that automates the boring, repetitive work and standardises how a team ships.</span>
                         <span class="project__go">View on GitHub <span class="arrow" aria-hidden="true">→</span></span>
                     </a>
                 </div>
@@ -1054,36 +1424,36 @@
         <section id="principles" class="section">
             <div class="wrap">
                 <div class="section__head">
-                    <span class="kicker">No. 04</span>
+                    <span class="kicker">No. 05</span>
                     <h2>What Guides Me</h2>
                 </div>
                 <div class="principles">
                     <div class="principle">
                         <span class="principle__no" aria-hidden="true">1</span>
                         <div>
-                            <h3>Autonomy over control</h3>
-                            <p>Teams with ownership, clear goals and trust outperform teams that are managed. My job is to remove obstacles, not to add myself as one.</p>
+                            <h3>Decisions sit next to the work</h3>
+                            <p>A team can only decide well if it sees what I see: business metrics, customer feedback, constraints, budget. I share as much of it as I'm allowed to, give each area one owner, and leave the call with them. Making real decisions, and owning the result when one goes wrong, is also how engineers grow fastest. My job is to make sure they have the context, and to stand behind them when they need it.</p>
                         </div>
                     </div>
                     <div class="principle">
                         <span class="principle__no" aria-hidden="true">2</span>
                         <div>
-                            <h3>Product-minded engineering</h3>
-                            <p>Engineers should own the "why." I push teams to validate ideas with prototypes and discovery before committing to a full build.</p>
+                            <h3>Outcomes are the metric</h3>
+                            <p>I check whether commitments are met and goals are reached. Where people work, how many hours they log and how many story points they burn tell me very little, and velocity turns into a game the moment it becomes the target.</p>
                         </div>
                     </div>
                     <div class="principle">
                         <span class="principle__no" aria-hidden="true">3</span>
                         <div>
                             <h3>Loosely coupled, independently deployable</h3>
-                            <p>Kafka and clean domain boundaries aren't the goal, they're how a team ships on Tuesday without waiting on three others. I architect for independence first, because that's what lets people move fast safely.</p>
+                            <p>Kafka and clean domain boundaries aren't the goal, they're how a team ships on Tuesday without waiting on three others. I architect for independence first, because that's what lets people move fast safely. Even more so now that code arrives faster than anyone can read it.</p>
                         </div>
                     </div>
                     <div class="principle">
                         <span class="principle__no" aria-hidden="true">4</span>
                         <div>
-                            <h3>Still building, still learning</h3>
-                            <p>A manager who can't build loses the plot. I came up through PHP and architecture, and I'm deliberately rebuilding that toolkit around AI and Python now, shipping small projects in the open, so my technical opinions stay earned, not remembered.</p>
+                            <h3>Dissent needs a strategy</h3>
+                            <p>Rebel is in the name, so here is the caveat. Reading <em>Rebels at Work</em>, I recognised myself as the book's bad rebel: plenty of energy and ideas, pushed without a plan, alienating the people I needed. Now I frame proposals around what the organisation already wants, find allies first and pick my moment. Sometimes the right move is not to push at all.</p>
                         </div>
                     </div>
                 </div>
@@ -1095,13 +1465,18 @@
     <footer id="contact" class="colophon">
         <div class="wrap">
             <p class="colophon__call">
-                Hiring, collaborating, or just want to <span class="accent">disagree?</span>
+                Hiring an engineering leader, or just want to <span class="accent">disagree?</span>
             </p>
+            <div class="contact-row">
+                <a class="btn btn--light" href="mailto:&#114;&#101;&#98;&#101;&#108;&#105;&#115;&#116;&#46;&#100;&#101;&#118;&#64;&#105;&#99;&#108;&#111;&#117;&#100;&#46;&#99;&#111;&#109;">Email me <span class="arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn--outline-light" href="https://www.linkedin.com/in/francisco-vilgre-la-madrid/">LinkedIn <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+            <!-- Icons: Font Awesome Free 6.7.2 by @fontawesome, https://fontawesome.com, CC BY 4.0 -->
             <div class="social">
-                <a href="https://github.com/rebelist" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/francisco-vilgre-la-madrid/" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://medium.com/@rebelist" title="Medium" aria-label="Medium"><i class="fab fa-medium" aria-hidden="true"></i></a>
-                <a href="mailto:&#114;&#101;&#98;&#101;&#108;&#105;&#115;&#116;&#46;&#100;&#101;&#118;&#64;&#105;&#99;&#108;&#111;&#117;&#100;&#46;&#99;&#111;&#109;" title="Email" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://github.com/rebelist" title="GitHub" aria-label="GitHub"><svg class="icon" viewBox="0 0 496 512" aria-hidden="true" focusable="false"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+                <a href="https://www.linkedin.com/in/francisco-vilgre-la-madrid/" title="LinkedIn" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                <a href="https://medium.com/@rebelist" title="Medium" aria-label="Medium"><svg class="icon" viewBox="0 0 640 512" aria-hidden="true" focusable="false"><path d="M180.5,74.262C80.813,74.262,0,155.633,0,256S80.819,437.738,180.5,437.738,361,356.373,361,256,280.191,74.262,180.5,74.262Zm288.25,10.646c-49.845,0-90.245,76.619-90.245,171.095s40.406,171.1,90.251,171.1,90.251-76.619,90.251-171.1H559C559,161.5,518.6,84.908,468.752,84.908Zm139.506,17.821c-17.526,0-31.735,68.628-31.735,153.274s14.2,153.274,31.735,153.274S640,340.631,640,256C640,171.351,625.785,102.729,608.258,102.729Z"/></svg></a>
+                <a href="mailto:&#114;&#101;&#98;&#101;&#108;&#105;&#115;&#116;&#46;&#100;&#101;&#118;&#64;&#105;&#99;&#108;&#111;&#117;&#100;&#46;&#99;&#111;&#109;" title="Email" aria-label="Email"><svg class="icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></a>
             </div>
             <div class="colophon__row">
                 <p class="colophon__meta">&copy; <span id="year">2026</span> The Rebelist · Seeking better ways to build software</p>
@@ -1113,7 +1488,7 @@
     <!-- ============ CONSENT BANNER ============ -->
     <div id="consent-banner" class="consent-banner" style="display: none;" role="dialog" aria-label="Cookie consent">
         <p class="consent-text">
-            I use analytics to understand how visitors engage with my writing and improve the site. No tracking until you say yes.
+            May I count your visit with Google Analytics? Nothing is tracked unless you say yes.
         </p>
         <div class="consent-buttons">
             <button class="consent-btn consent-btn-decline" onclick="declineConsent()">Decline</button>
@@ -1159,7 +1534,7 @@
       "alternateName": "The Rebelist",
       "url": "https://rebelist.github.io/",
       "image": "https://avatars.githubusercontent.com/u/195816070?v=4",
-      "description": "Engineering Manager with 12+ years building backend systems and leading autonomous teams. Writes about engineering leadership, team autonomy, and product-minded engineering.",
+      "description": "Engineering manager in Munich, building backend systems since 2012. Leads self-managed product teams, builds LLM applications in Python, and writes about engineering leadership and what AI changes for engineers.",
       "jobTitle": "Engineering Manager",
       "worksFor": {
         "@type": "Organization",
@@ -1171,31 +1546,21 @@
       },
       "knowsLanguage": ["Spanish", "English", "German"],
       "knowsAbout": [
-        "Artificial Intelligence",
-        "AI Agents",
-        "Large Language Models (LLMs)",
-        "Retrieval-Augmented Generation (RAG)",
-        "Vector Databases",
-        "Python",
-        "Pydantic",
         "Engineering Leadership",
-        "People Management",
-        "Engineering Hiring",
-        "Agile Delivery",
+        "Self-Managed Teams",
+        "Product Engineering",
         "Engineering Metrics",
-        "Team Autonomy",
-        "Product-Minded Engineering",
         "Event-Driven Architecture",
         "Domain-Driven Design",
-        "Microservices",
+        "LLM Applications",
+        "AI Agents",
+        "Retrieval-Augmented Generation (RAG)",
+        "Python",
+        "FastAPI",
         "PHP",
         "Apache Kafka",
         "Kubernetes",
-        "AWS",
-        "CI/CD",
-        "Observability",
-        "Redis",
-        "Software Engineering"
+        "AWS"
       ],
       "alumniOf": [
         {
